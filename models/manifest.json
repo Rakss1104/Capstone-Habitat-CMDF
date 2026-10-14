@@ -1,0 +1,38 @@
+{
+ "environment": {
+  "python": "3.12.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "matplotlib": "3.11.2",
+  "SimpleITK": "2.5.6",
+  "radiomics": "not installed",
+  "joblib": "1.6.0"
+ },
+ "repeats": 5,
+ "seed": 20261012,
+ "feature_sets": {
+  "habitat": [
+   "M3",
+   "M4"
+  ],
+  "cmdf": [
+   "V",
+   "P+D"
+  ]
+ },
+ "classifiers": [
+  "LogReg-L2",
+  "LogReg-ElasticNet",
+  "SVM-RBF",
+  "RandomForest",
+  "ExtraTrees",
+  "GradientBoosting",
+  "KNN",
+  "GaussianNB",
+  "MLP"
+ ],
+ "seconds": 2983
+}

@@ -1,0 +1,11 @@
+,step,cohort,n,codeleted,non-codeleted,relative,unknown
+0,S0 rows in metadata files,UTSW,625,63,272,0,290
+1,S0 rows in metadata files,UCSF,501,9,395,6,91
+2,S1 unique patients (UCSF follow-up scans removed),UTSW,625,63,272,0,290
+3,S1 unique patients (UCSF follow-up scans removed),UCSF,495,9,389,6,91
+4,S2 IDH status known,UTSW,622,63,272,0,287
+5,S2 IDH status known,UCSF,495,9,389,6,91
+6,S3 IDH-mutant,UTSW,176,63,77,0,36
+7,S3 IDH-mutant,UCSF,103,9,84,6,4
+8,S4 1p/19q resolved (primary label),UTSW,140,63,77,0,0
+9,S4 1p/19q resolved (primary label),UCSF,93,9,84,0,0

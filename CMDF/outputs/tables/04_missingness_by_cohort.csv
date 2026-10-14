@@ -1,0 +1,11 @@
+field (missing or 'unknown'),UCSF,UTSW
+age,0,0
+sex,0,0
+grade,0,7
+idh_status,0,3
+idh_method,495,3
+codel_status,91,290
+scanner_make,495,28
+field_strength_T,495,28
+seg_provenance,0,0
+biopsy_prior_to_imaging,0,625

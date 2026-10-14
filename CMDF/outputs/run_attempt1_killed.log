@@ -1,0 +1,172 @@
+{
+ "python": "3.12.15",
+ "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+ "numpy": "2.5.4",
+ "pandas": "3.0.6",
+ "scipy": "1.18.1",
+ "sklearn": "1.9.1",
+ "matplotlib": "3.11.2",
+ "SimpleITK": "2.5.6",
+ "radiomics": "3.1.1.dev111+g8ed579383",
+ "joblib": "1.6.0"
+}
+data root: /mnt/f/Downloads/1P19Q CLAUDE CODE/CMDF/../1P19Q -Dataset | habitat cache: /mnt/f/Downloads/1P19Q CLAUDE CODE/CMDF/../habitat_1p19q/outputs | outputs: /mnt/f/Downloads/1P19Q CLAUDE CODE/CMDF/outputs
+PROTOCOL.md SHA-256: 97eab31935b7735af7d7441691801c60e6e7d6611816b50fda9338acebd38710
+
+##############################################################################
+# 1 Cohort, imaging QC and cached patch features
+##############################################################################
+Reusing cohort/QC/feature tables from /mnt/f/Downloads/1P19Q CLAUDE CODE/CMDF/outputs/cache/data.pkl (same metadata hashes and feature fingerprint)
+[1 Cohort, imaging QC and cached patch features: 0 s]
+
+##############################################################################
+# 2 Voxel-level CMDF and T2-FLAIR mismatch
+##############################################################################
+PASS UTSW analysis set matches the protocol (74 patients, 36 codeleted) — 74 patients, 36 codeleted
+PASS UCSF analysis set matches the protocol (76 patients, 8 codeleted) — 76 patients, 8 codeleted
+[Parallel(n_jobs=3)]: Using backend LokyBackend with 3 concurrent workers.
+[Parallel(n_jobs=3)]: Done   2 tasks      | elapsed:   31.0s
+[Parallel(n_jobs=3)]: Done   7 tasks      | elapsed:  1.3min
+[Parallel(n_jobs=3)]: Done  12 tasks      | elapsed:  1.9min
+[Parallel(n_jobs=3)]: Done  19 tasks      | elapsed:  3.3min
+[Parallel(n_jobs=3)]: Done  26 tasks      | elapsed:  4.4min
+[Parallel(n_jobs=3)]: Done  35 tasks      | elapsed:  5.6min
+[Parallel(n_jobs=3)]: Done  44 tasks      | elapsed:  6.9min
+[Parallel(n_jobs=3)]: Done  55 tasks      | elapsed:  8.5min
+[Parallel(n_jobs=3)]: Done  66 tasks      | elapsed: 10.2min
+[Parallel(n_jobs=3)]: Done  79 tasks      | elapsed: 11.5min
+[Parallel(n_jobs=3)]: Done  92 tasks      | elapsed: 12.4min
+[Parallel(n_jobs=3)]: Done 107 tasks      | elapsed: 13.4min
+[Parallel(n_jobs=3)]: Done 122 tasks      | elapsed: 14.3min
+[Parallel(n_jobs=3)]: Done 139 tasks      | elapsed: 15.5min
+[Parallel(n_jobs=3)]: Done 150 out of 150 | elapsed: 16.2min finished
+Voxel CMDF finished for 150 patients in 973 s (cached patients are instant).
+Voxel CMDF status:
+        patients
+status          
+ok           150
+
+T2-FLAIR mismatch fraction by cohort and label:
+              count    25%    50%    75%
+cohort label                            
+UCSF   0       68.0  0.004  0.014  0.115
+       1        8.0  0.003  0.004  0.006
+UTSW   0       38.0  0.020  0.059  0.252
+       1       36.0  0.008  0.024  0.044
+
+[2 Voxel-level CMDF and T2-FLAIR mismatch: 973 s]
+
+##############################################################################
+# 3 Feature blocks
+##############################################################################
+PASS Feature block sizes match the protocol — {"P": 744, "D": 1128, "D_T2FL": 188, "V": 45, "MM": 3}
+Patches per patient: median 26 (IQR 12–46), min 1, 2 patient(s) with a single patch (SD features imputed)
+PASS Pairing null keeps each sequence's patch distribution and breaks co-location — checked on UCSF-PDGM-0089 (126 patches)
+[3 Feature blocks: 1 s]
+
+##############################################################################
+# 4 Leakage-free cross-validation
+##############################################################################
+
+=== UTSW: 74 patients (36 codeleted) | models ['M1_clin', 'M1', 'M2', 'P', 'D', 'P+D', 'D_T2FL', 'V', 'MM', 'M2+V']
+  50 folds x 10 models in 563 s
+PASS [UTSW] train/test disjoint and cosine scaling fitted on training patients only (all folds) — 50 folds asserted
+
+=== pooled: 150 patients (44 codeleted) | models ['M0', 'M1_clin', 'M2', 'P', 'D', 'P+D', 'V', 'P+cohort', 'P+D+cohort', 'V+cohort', 'M2+cohort']
+  50 folds x 11 models in 904 s
+PASS [pooled] train/test disjoint and cosine scaling fitted on training patients only (all folds) — 50 folds asserted
+[4 Leakage-free cross-validation: 1468 s]
+
+##############################################################################
+# 5 Primary and secondary analyses
+##############################################################################
+Discrimination summary:
+       set       model    n  n_codeleted AUROC (repeat-avg OOF, 95% CI) AUROC per repeat: mean [min–max]       AUPRC (95% CI)  prevalence  Brier  sensitivity  specificity  precision     F1  balanced acc. confusion (rep 1) TP/FP/TN/FN
+0     UTSW     M1_clin   74           36            0.659 (0.527–0.788)              0.651 [0.617–0.700]  0.689 (0.580–0.809)       0.486  0.237        0.575        0.700      0.647  0.607          0.638                   20/12/26/16
+1     UTSW          M1   74           36            0.656 (0.520–0.787)              0.645 [0.590–0.686]  0.689 (0.574–0.808)       0.486  0.233        0.578        0.655      0.615  0.593          0.617                   20/12/26/16
+2     UTSW          M2   74           36            0.692 (0.566–0.811)              0.656 [0.614–0.700]  0.621 (0.521–0.791)       0.486  0.231        0.744        0.484      0.579  0.649          0.614                    29/21/17/7
+3     UTSW           P   74           36            0.662 (0.533–0.780)              0.639 [0.586–0.697]  0.621 (0.513–0.755)       0.486  0.248        0.708        0.526      0.588  0.639          0.617                   25/17/21/11
+4     UTSW           D   74           36            0.610 (0.471–0.737)              0.610 [0.569–0.651]  0.527 (0.455–0.659)       0.486  0.270        0.689        0.505      0.570  0.622          0.597                    27/17/21/9
+5     UTSW         P+D   74           36            0.628 (0.496–0.757)              0.600 [0.544–0.659]  0.562 (0.475–0.695)       0.486  0.278        0.700        0.511      0.577  0.630          0.605                   26/19/19/10
+6     UTSW      D_T2FL   74           36            0.675 (0.550–0.799)              0.662 [0.606–0.719]  0.622 (0.520–0.780)       0.486  0.229        0.661        0.547      0.583  0.617          0.604                    27/17/21/9
+7     UTSW           V   74           36            0.765 (0.651–0.871)              0.744 [0.692–0.798]  0.719 (0.607–0.873)       0.486  0.199        0.739        0.663      0.675  0.705          0.701                    27/15/23/9
+8     UTSW          MM   74           36            0.703 (0.576–0.820)              0.695 [0.662–0.730]  0.656 (0.544–0.790)       0.486  0.222        0.733        0.613      0.645  0.684          0.673                   21/12/26/15
+9     UTSW        M2+V   74           36            0.708 (0.583–0.825)              0.679 [0.648–0.719]  0.651 (0.548–0.817)       0.486  0.224        0.722        0.524      0.590  0.648          0.623                   26/19/19/10
+10  pooled          M0  150           44            0.696 (0.596–0.788)              0.721 [0.721–0.721]  0.456 (0.366–0.599)       0.293  0.228        0.818        0.642      0.486  0.610          0.730                    36/38/68/8
+11  pooled     M1_clin  150           44            0.648 (0.537–0.754)              0.644 [0.610–0.672]  0.476 (0.374–0.631)       0.293  0.238        0.543        0.722      0.449  0.490          0.632                   17/21/85/27
+12  pooled          M2  150           44            0.828 (0.762–0.893)              0.807 [0.771–0.841]  0.589 (0.484–0.742)       0.293  0.161        0.732        0.729      0.530  0.614          0.731                   28/24/82/16
+13  pooled           P  150           44            0.802 (0.724–0.877)              0.790 [0.745–0.826]  0.612 (0.505–0.759)       0.293  0.169        0.711        0.744      0.538  0.612          0.728                   32/26/80/12
+14  pooled           D  150           44            0.769 (0.691–0.848)              0.748 [0.683–0.773]  0.510 (0.420–0.663)       0.293  0.188        0.686        0.736      0.520  0.591          0.711                   27/28/78/17
+15  pooled         P+D  150           44            0.776 (0.694–0.855)              0.759 [0.709–0.792]  0.556 (0.452–0.710)       0.293  0.182        0.664        0.740      0.518  0.580          0.702                   26/24/82/18
+16  pooled           V  150           44            0.800 (0.716–0.879)              0.792 [0.748–0.817]  0.658 (0.539–0.785)       0.293  0.168        0.693        0.789      0.582  0.631          0.741                   31/37/69/13
+17  pooled    P+cohort  150           44            0.805 (0.729–0.880)              0.792 [0.742–0.828]  0.620 (0.511–0.763)       0.293  0.167        0.727        0.747      0.545  0.623          0.737                   32/26/80/12
+18  pooled  P+D+cohort  150           44            0.777 (0.694–0.857)              0.760 [0.704–0.793]  0.556 (0.451–0.710)       0.293  0.182        0.670        0.742      0.523  0.586          0.706                   26/26/80/18
+19  pooled    V+cohort  150           44            0.851 (0.783–0.916)              0.841 [0.798–0.858]  0.741 (0.628–0.851)       0.293  0.147        0.718        0.809      0.613  0.660          0.764                   29/17/89/15
+20  pooled   M2+cohort  150           44            0.830 (0.763–0.896)              0.814 [0.781–0.843]  0.590 (0.485–0.744)       0.293  0.159        0.723        0.736      0.535  0.614          0.729                   28/26/80/16
+
+Discrimination within each cohort, from the pooled cross-validation:
+       set       model cohort   n  n_codeleted AUROC within cohort (95% CI)
+0   pooled     M1_clin   UCSF  76            8          0.605 (0.338–0.855)
+1   pooled     M1_clin   UTSW  74           36          0.676 (0.553–0.798)
+2   pooled          M2   UCSF  76            8          0.881 (0.772–0.963)
+3   pooled          M2   UTSW  74           36          0.692 (0.565–0.808)
+4   pooled           P   UCSF  76            8          0.792 (0.610–0.936)
+5   pooled           P   UTSW  74           36          0.689 (0.561–0.806)
+6   pooled           D   UCSF  76            8          0.792 (0.614–0.936)
+7   pooled           D   UTSW  74           36          0.626 (0.491–0.752)
+8   pooled         P+D   UCSF  76            8          0.785 (0.608–0.932)
+9   pooled         P+D   UTSW  74           36          0.654 (0.522–0.773)
+10  pooled           V   UCSF  76            8          0.748 (0.561–0.914)
+11  pooled           V   UTSW  74           36          0.745 (0.616–0.854)
+12  pooled    P+cohort   UCSF  76            8          0.796 (0.619–0.936)
+13  pooled    P+cohort   UTSW  74           36          0.694 (0.568–0.810)
+14  pooled  P+D+cohort   UCSF  76            8          0.785 (0.605–0.934)
+15  pooled  P+D+cohort   UTSW  74           36          0.654 (0.521–0.773)
+16  pooled    V+cohort   UCSF  76            8          0.801 (0.640–0.939)
+17  pooled    V+cohort   UTSW  74           36          0.790 (0.676–0.885)
+18  pooled   M2+cohort   UCSF  76            8          0.871 (0.754–0.961)
+19  pooled   M2+cohort   UTSW  74           36          0.695 (0.568–0.811)
+
+PRE-SPECIFIED PRIMARY COMPARISON:
+    set comparison  ΔAUROC (fold mean)        NB 95% CI    NB p  ΔAUROC (repeat-avg OOF) bootstrap 95% CI folds with Δ>0
+0  UTSW    P+D − P             -0.0456  -0.112 to 0.020  0.1713                  -0.0336  -0.081 to 0.013           8/50
+
+Secondary comparisons (Benjamini–Hochberg, S1–S7):
+   id     set             comparison  ΔAUROC (fold mean)        NB 95% CI    NB p  ΔAUROC (repeat-avg OOF)  bootstrap 95% CI folds with Δ>0  NB p (BH-adjusted)
+0  S1    UTSW                  D − P             -0.0400  -0.128 to 0.048  0.3629                  -0.0519   -0.126 to 0.018          12/50              0.4597
+1  S2    UTSW               P+D − M2             -0.0697  -0.172 to 0.032  0.1763                  -0.0643   -0.149 to 0.016          13/50              0.4114
+2  S3    UTSW       D_T2FL − M1_clin              0.0023  -0.167 to 0.171  0.9781                   0.0161   -0.122 to 0.159          27/50              0.9781
+3  S4    UTSW            V − M1_clin              0.0849  -0.093 to 0.263  0.3420                   0.1060   -0.064 to 0.268          36/50              0.4597
+4  S5    UTSW              M2+V − M2              0.0218  -0.029 to 0.073  0.3940                   0.0161   -0.030 to 0.059          33/50              0.4597
+5  S6  pooled  P+D+cohort − P+cohort             -0.0330  -0.068 to 0.002  0.0608                  -0.0279  -0.054 to -0.003           6/50              0.2129
+6  S7  pooled          V+cohort − M0              0.1149   0.046 to 0.184  0.0016                   0.1553    0.055 to 0.257          46/50              0.0109
+
+H2 (pre-specified): T2–FLAIR mismatch fraction, codeleted vs non-codeleted:
+       set            feature  n_codel  n_non  median codeleted  median non-codeleted  Cliff's delta (>0: higher if codeleted)            95% CI       p  q (BH within set)
+42    UTSW  MM__mismatch_frac       36     38            0.0237                0.0595                                  -0.3421  -0.594 to -0.086  0.0116             0.0325
+87  pooled  MM__mismatch_frac       44    106            0.0124                0.0326                                  -0.1814   -0.361 to 0.015  0.0812             0.1461
+
+Voxel CMDF features, exploratory (top 8 per set by p):
+       set                   feature  n_codel  n_non  median codeleted  median non-codeleted  Cliff's delta (>0: higher if codeleted) 95% CI       p  q (BH within set)
+13    UTSW         V_T1-T2__spearman       36     38           -0.4797               -0.7641                                   0.6111         0.0000             0.0003
+12    UTSW          V_T1-T2__pearson       36     38           -0.4988               -0.7731                                   0.5746         0.0000             0.0004
+8     UTSW             V_T1-T2__d_sd       36     38            1.2297                1.6960                                  -0.5687         0.0000             0.0004
+9     UTSW            V_T1-T2__d_p10       36     38           -2.8377               -4.2107                                   0.5395         0.0001             0.0008
+23    UTSW          V_T1CE-T2__d_p10       36     38           -3.0151               -4.4695                                   0.5190         0.0001             0.0010
+22    UTSW           V_T1CE-T2__d_sd       36     38            1.3161                1.7115                                  -0.5161         0.0001             0.0010
+7     UTSW           V_T1-T2__d_mean       36     38           -1.0928               -2.0499                                   0.5058         0.0002             0.0012
+27    UTSW       V_T1CE-T2__spearman       36     38           -0.5173               -0.7324                                   0.4956         0.0003             0.0014
+88  pooled  MM__flair_core_minus_rim       44    106            1.2554                0.4819                                   0.4160         0.0001             0.0028
+58  pooled         V_T1-T2__spearman       44    106           -0.4825               -0.6023                                   0.3461         0.0009             0.0107
+86  pooled      V_T2-FLAIR__spearman       44    106            0.7697                0.5496                                   0.3413         0.0010             0.0107
+69  pooled          V_T1CE-T2__d_p50       44    106           -0.8990               -1.5913                                   0.3388         0.0011             0.0107
+57  pooled          V_T1-T2__pearson       44    106           -0.4943               -0.6181                                   0.3362         0.0012             0.0107
+72  pooled       V_T1CE-T2__spearman       44    106           -0.5317               -0.6287                                   0.3315         0.0014             0.0107
+66  pooled         V_T1CE-T2__d_mean       44    106           -1.0305               -1.6006                                   0.3233         0.0019             0.0120
+46  pooled           V_T1-T1CE__d_sd       44    106            0.3989                0.4849                                  -0.3173         0.0023             0.0128
+
+[5 Primary and secondary analyses: 496 s]
+
+##############################################################################
+# 6 Null tests
+##############################################################################

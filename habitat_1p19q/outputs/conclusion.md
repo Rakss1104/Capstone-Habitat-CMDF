@@ -1,0 +1,40 @@
+- Eligible IDH-mutant patients with a resolved 1p/19q label: 233 (UTSW 140, UCSF 93); codeleted 72.
+- Cohort membership alone gives a pooled AUROC of 0.698 (0.643–0.752) (UTSW vs UCSF odds ratio for codeletion 7.57).
+- Habitat-evaluable patients (all sets, incl. label-sensitivity extras): 150.
+- UTSW_meta · M1_clin (n=140, 63 codel.): AUROC 0.645 (0.552–0.734).
+- pooled_meta · M0 (n=233, 72 codel.): AUROC 0.667 (0.593–0.744).
+- pooled_meta · M1_clin (n=233, 72 codel.): AUROC 0.648 (0.566–0.726).
+- UTSW · M1_clin (n=74, 36 codel.): AUROC 0.659 (0.527–0.788).
+- UTSW · M1 (n=74, 36 codel.): AUROC 0.656 (0.520–0.787).
+- UTSW · M2 (n=74, 36 codel.): AUROC 0.692 (0.566–0.811).
+- UTSW · M3 (n=74, 36 codel.): AUROC 0.607 (0.471–0.733).
+- UTSW · M4 (n=74, 36 codel.): AUROC 0.597 (0.464–0.731).
+- UTSW · M5 (n=74, 36 codel.): AUROC 0.643 (0.512–0.768).
+- pooled · M0 (n=150, 44 codel.): AUROC 0.696 (0.596–0.788).
+- pooled · M1_clin (n=150, 44 codel.): AUROC 0.648 (0.537–0.754).
+- pooled · M1 (n=150, 44 codel.): AUROC 0.637 (0.527–0.743).
+- pooled · M2 (n=150, 44 codel.): AUROC 0.828 (0.762–0.893).
+- pooled · M3 (n=150, 44 codel.): AUROC 0.567 (0.474–0.660).
+- pooled · M4 (n=150, 44 codel.): AUROC 0.567 (0.474–0.655).
+- pooled · M5 (n=150, 44 codel.): AUROC 0.672 (0.580–0.766).
+- pooled · M3+cohort (n=150, 44 codel.): AUROC 0.776 (0.695–0.854).
+- pooled · M4+cohort (n=150, 44 codel.): AUROC 0.800 (0.723–0.869).
+- pooled · M5+cohort (n=150, 44 codel.): AUROC 0.799 (0.722–0.869).
+- Primary ΔAUROC (M4 − M3, UTSW): -0.029 (Nadeau–Bengio 95% CI -0.146 to 0.088); spatial-arrangement null p = 0.475.
+- By the pre-specified rule, H1 is **NOT SUPPORTED**.
+- Secondary UTSW: M3 − M1 = -0.028 (NB 95% CI -0.180 to 0.124; BH-adjusted p = 0.804).
+- Secondary UTSW: M3 − M2 = -0.050 (NB 95% CI -0.187 to 0.088; BH-adjusted p = 0.804).
+- Secondary UTSW: M5 − M1 = -0.025 (NB 95% CI -0.141 to 0.091; BH-adjusted p = 0.804).
+- Secondary UTSW: M4 − M2 = -0.079 (NB 95% CI -0.226 to 0.069; BH-adjusted p = 0.652).
+- Secondary pooled: M4 − M3 = 0.026 (NB 95% CI -0.082 to 0.134; BH-adjusted p = 0.804).
+- Secondary pooled: M3 − M0 = -0.188 (NB 95% CI -0.308 to -0.068; BH-adjusted p = 0.026).
+- Secondary pooled: M4+cohort − M3+cohort = -0.001 (NB 95% CI -0.058 to 0.055; BH-adjusted p = 0.966).
+- Secondary pooled: M5+cohort − M1 = 0.148 (NB 95% CI 0.040 to 0.257; BH-adjusted p = 0.038).
+- Secondary pooled_meta: M1_clin − M0 = -0.054 (NB 95% CI -0.132 to 0.023; BH-adjusted p = 0.494).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M1_clin: AUROC 0.585 (0.346–0.824).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M1: AUROC 0.511 (0.246–0.767).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M2: AUROC 0.757 (0.553–0.906).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M3: AUROC 0.890 (0.838–0.934).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M4: AUROC 0.673 (0.524–0.819).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M5: AUROC 0.667 (0.483–0.849).
+- Leave-one-cohort-out UCSF → UTSW: NOT RUN: 8 codeleted training patients < 20.

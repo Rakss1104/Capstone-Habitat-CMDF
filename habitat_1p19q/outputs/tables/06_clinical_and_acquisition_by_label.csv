@@ -1,0 +1,6 @@
+,cohort,variable,codeleted median,non-codeleted median,effect,estimate (95% CI),p
+0,UCSF,age (years),44.0,36.0,rank-biserial r (>0: older if codeleted),0.25 (-0.19–0.67),0.2191226144980457
+1,UCSF,male sex,,,odds ratio (male vs female),0.85 (0.17–4.62),1.0
+2,UTSW,age (years),42.0,35.0,rank-biserial r (>0: older if codeleted),0.33 (0.14–0.51),0.0007827020578969995
+3,UTSW,male sex,,,odds ratio (male vs female),0.82 (0.40–1.68),0.6108191423662701
+4,UTSW,3 T (vs 1.5 T) scanner,,,odds ratio,1.10 (0.48–2.55),0.8460236307392877

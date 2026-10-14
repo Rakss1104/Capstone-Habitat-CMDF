@@ -1,0 +1,115 @@
+{
+ "protocol_sha256": "97eab31935b7735af7d7441691801c60e6e7d6611816b50fda9338acebd38710",
+ "input_hashes": {
+  "UTSW_Glioma_Metadata.tsv": "f7ff889fa7d197b2f589695d3e7ea8a2d1d198c4f9c0044fc71898a08aa24ed0",
+  "UCSF-PDGM-metadata_v5.csv": "afc1c23a0eb0597b56e603741e72f2308b4860281187cd3808e05b7a0116fd78"
+ },
+ "environment": {
+  "python": "3.12.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "matplotlib": "3.11.2",
+  "SimpleITK": "2.5.6",
+  "radiomics": "not installed",
+  "joblib": "1.6.0"
+ },
+ "habitat_feature_fingerprint": "78c614a2dc75",
+ "settings": {
+  "pairing_null_reps": "100",
+  "label_permutations": "200",
+  "naive_permutations": "50",
+  "naive_top_k": "30",
+  "naive_seed": "42",
+  "mismatch_threshold": "1.0",
+  "core_depth_norm": "0.5",
+  "rim_depth_mm": "3.0",
+  "min_region_voxels": "50",
+  "spearman_subsample": "200000",
+  "min_patches_robustness": "4",
+  "voxel_n_jobs": "3",
+  "cv_n_jobs": "6",
+  "null_n_jobs": "4",
+  "output_dir": "F:\\Downloads\\1P19Q CLAUDE CODE\\CMDF\\outputs"
+ },
+ "cv": {
+  "n_splits": 5,
+  "n_repeats": 10,
+  "inner_splits": 5
+ },
+ "seed": 20261012,
+ "checks": {
+  "UTSW analysis set matches the protocol (74 patients, 36 codeleted)": {
+   "status": "PASS",
+   "detail": "74 patients, 36 codeleted"
+  },
+  "UCSF analysis set matches the protocol (76 patients, 8 codeleted)": {
+   "status": "PASS",
+   "detail": "76 patients, 8 codeleted"
+  },
+  "Feature block sizes match the protocol": {
+   "status": "PASS",
+   "detail": "{\"P\": 744, \"D\": 1128, \"D_T2FL\": 188, \"V\": 45, \"MM\": 3}"
+  },
+  "Pairing null keeps each sequence's patch distribution and breaks co-location": {
+   "status": "PASS",
+   "detail": "checked on UCSF-PDGM-0089 (126 patches)"
+  },
+  "[UTSW] train/test disjoint and cosine scaling fitted on training patients only (all folds)": {
+   "status": "PASS",
+   "detail": "50 folds asserted"
+  },
+  "[pooled] train/test disjoint and cosine scaling fitted on training patients only (all folds)": {
+   "status": "PASS",
+   "detail": "50 folds asserted"
+  },
+  "Permuted and observed runs share identical label-independent folds": {
+   "status": "PASS",
+   "detail": "asserted"
+  }
+ },
+ "timings": {
+  "1 Cohort, imaging QC and cached patch features": 0.0,
+  "2 Voxel-level CMDF and T2-FLAIR mismatch": 4.3,
+  "3 Feature blocks": 2.1,
+  "4 Leakage-free cross-validation": 1700.0,
+  "5 Primary and secondary analyses": 334.6,
+  "6 Null tests": 850.2,
+  "7 Cross-cohort transport": 59.8,
+  "8 Robustness and calibration": 526.1,
+  "9 Methodological arm: original notebook protocol": 529.3
+ },
+ "tables": [
+  "02_voxel_status.csv",
+  "04_fold_records_UTSW.csv",
+  "04_fold_records_pooled.csv",
+  "04_missingness_by_cohort.csv",
+  "04_ucsf_followup_scans.csv",
+  "05_discrimination_summary.csv",
+  "05_flags_idh_mutant.csv",
+  "05_patient_flow_metadata.csv",
+  "05_primary_comparison.csv",
+  "05_secondary_comparisons.csv",
+  "05_voxel_univariate.csv",
+  "05_within_cohort_discrimination.csv",
+  "06_label_permutation.csv",
+  "06_pairing_null.csv",
+  "07_imaging_qc.csv",
+  "07_leave_one_cohort_out.csv",
+  "08_calibration.csv",
+  "08_exclusions_by_class.csv",
+  "08_pair_ablation.csv",
+  "08_robustness_primary.csv",
+  "09_original_protocol_classifiers.csv",
+  "09_original_protocol_summary.csv"
+ ],
+ "figures": [
+  "10_auroc_forest.png",
+  "10_null_distributions.png",
+  "10_pair_ablation.png",
+  "10_roc_curves.png",
+  "10_t2flair_mismatch.png"
+ ]
+}

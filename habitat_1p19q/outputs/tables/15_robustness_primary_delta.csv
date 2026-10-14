@@ -1,0 +1,10 @@
+,variant,n,n_codeleted,ΔAUROC (fold mean),NB 95% CI,K per fold
+0,UTSW: fixed K = 4,74,36,-0.02551020408163267,-0.144 to 0.093,"4,4,4,4,4"
+1,UTSW: fixed K = 5,74,36,-0.08316326530612249,-0.363 to 0.196,"5,5,5,5,5"
+2,UTSW: fixed K = 6,74,36,-0.02959183673469391,-0.122 to 0.063,"6,6,6,6,6"
+3,UTSW: fixed K = 7,74,36,-0.02244897959183676,-0.196 to 0.151,"7,7,7,7,7"
+4,UTSW: fixed K = 8,74,36,0.012755102040816313,-0.139 to 0.165,"8,8,8,8,8"
+5,UTSW: exclude_histology_discordant,70,36,-0.03073979591836736,-0.106 to 0.044,"3,4,3,3,3"
+6,UTSW: exclude_grade4,69,36,-0.03664965986394557,-0.174 to 0.100,"3,3,7,3,3"
+7,pooled: per-cohort z-score harmonisation (training-only),150,44,-0.04120646945646948,-0.256 to 0.174,"3,3,3,3,3"
+8,pooled: UCSF relative/unknown resolved by WHO 2021 diagnosis,150,44,0.055860269360269346,-0.047 to 0.159,"3,3,5,3,3"

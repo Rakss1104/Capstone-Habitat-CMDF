@@ -1,0 +1,12 @@
+{
+ "4-5 Cohort ingestion, integrity checks, eligibility": 0.4,
+ "6 Cohort audit": 7.8,
+ "7 Imaging quality control": 112.5,
+ "8 Patch construction and feature extraction": 2014.7,
+ "9-10 Descriptive habitat model and spatial-metric checks": 4.7,
+ "12 Leakage-free cross-validation": 4178.2,
+ "13 Primary and secondary analyses": 262.9,
+ "13.4-13.5 Null tests": 864.7,
+ "14 Cross-cohort generalisation": 91.0,
+ "15 Calibration, importance, robustness": 282.8
+}

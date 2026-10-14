@@ -1,0 +1,11 @@
+numpy>=2.0
+pandas>=2.2
+scipy>=1.14
+scikit-learn>=1.6
+matplotlib>=3.9
+joblib>=1.4
+SimpleITK>=2.4
+PyWavelets>=1.6
+# PyRadiomics: the PyPI 3.1.0 source release fails to build on recent Pythons; pinned to the same commit as the notebook.
+pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics.git@8ed579383b44806651c463d5e691f3b2b57522ab
+pytest>=8

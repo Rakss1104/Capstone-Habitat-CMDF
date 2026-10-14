@@ -1,0 +1,569 @@
+{
+ "python": "3.12.15",
+ "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+ "numpy": "2.5.4",
+ "pandas": "3.0.6",
+ "scipy": "1.18.1",
+ "sklearn": "1.9.1",
+ "matplotlib": "3.11.2",
+ "SimpleITK": "2.5.6",
+ "radiomics": "3.1.1.dev111+g8ed579383",
+ "joblib": "1.6.0"
+}
+Imaging mode: real | data root: /mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset | outputs: /mnt/f/Downloads/1P19Q CLAUDE CODE/habitat_1p19q/outputs
+
+##############################################################################
+# 4-5 Cohort ingestion, integrity checks, eligibility
+##############################################################################
+UTSW rows: 625 | UCSF rows: 501
+SHA-256: {'UTSW_Glioma_Metadata.tsv': 'f7ff889fa7d197b2f589695d3e7ea8a2d1d198c4f9c0044fc71898a08aa24ed0', 'UCSF-PDGM-metadata_v5.csv': 'afc1c23a0eb0597b56e603741e72f2308b4860281187cd3808e05b7a0116fd78'}
+PASS UTSW source IDs unique — 625 unique of 625
+PASS UCSF source IDs unique — 501 unique of 501
+UCSF follow-up scans detected:
+      followup_source_id      patient_id  baseline_rows baseline_source_id idh_status conflicting_fields
+0  UCSF-PDGM-0429_FU003d  UCSF-PDGM-0429              1      UCSF-PDGM-429   wildtype               none
+1  UCSF-PDGM-0396_FU175d  UCSF-PDGM-0396              1      UCSF-PDGM-396   wildtype               none
+2  UCSF-PDGM-0409_FU001d  UCSF-PDGM-0409              1      UCSF-PDGM-409   wildtype               none
+3  UCSF-PDGM-0431_FU001d  UCSF-PDGM-0431              1      UCSF-PDGM-431   wildtype               none
+4  UCSF-PDGM-0391_FU016d  UCSF-PDGM-0391              1      UCSF-PDGM-391   wildtype               none
+5  UCSF-PDGM-0433_FU007d  UCSF-PDGM-0433              1      UCSF-PDGM-433   wildtype               none
+
+PASS Every UCSF follow-up has exactly one baseline row — 6 follow-up rows
+PASS UCSF canonical patient IDs unique after removing follow-ups — 495 patients
+PASS No patient ID shared across cohorts
+Missingness of harmonised fields by cohort:
+                              UCSF  UTSW
+field (missing or 'unknown')            
+age                              0     0
+sex                              0     0
+grade                            0     7
+idh_status                       0     3
+idh_method                     495     3
+codel_status                    91   290
+scanner_make                   495    28
+field_strength_T               495    28
+seg_provenance                   0     0
+biopsy_prior_to_imaging          0   625
+
+Flags among IDH-mutant patients (counts):
+cohort                                         UCSF  UTSW
+histology_oligodendroglioma_but_intact            0     4
+histology_astrocytoma_but_codeleted               0     2
+histology_oligoastrocytoma                        0    26
+histology_glioblastoma_idh_mutant                 0    20
+grade4_codeleted                                  0     0
+who2021_oligodendroglioma_label_not_codeleted     4     0
+who2021_astrocytoma_label_codeleted               2     0
+ucsf_relative_codeletion                          6     0
+ucsf_biopsy_prior_to_imaging                     13     0
+idh_wildtype_codeleted                            0     0
+
+PASS No IDH-wildtype tumour labelled codeleted — 0 cases
+PASS No grade-4 tumour labelled codeleted — 0 cases
+Patient flow (metadata):
+                                                            n  codeleted  non-codeleted  relative  unknown
+step                                              cohort                                                  
+S0 rows in metadata files                         UTSW    625         63            272         0      290
+                                                  UCSF    501          9            395         6       91
+S1 unique patients (UCSF follow-up scans removed) UTSW    625         63            272         0      290
+                                                  UCSF    495          9            389         6       91
+S2 IDH status known                               UTSW    622         63            272         0      287
+                                                  UCSF    495          9            389         6       91
+S3 IDH-mutant                                     UTSW    176         63             77         0       36
+                                                  UCSF    103          9             84         6        4
+S4 1p/19q resolved (primary label)                UTSW    140         63             77         0        0
+                                                  UCSF     93          9             84         0        0
+
+PASS Eligible cohort is IDH-mutant only — 233 patients
+Label sets: {'primary': 233, 'ucsf_relative_resolved_by_who2021': 243, 'exclude_histology_discordant': 227, 'exclude_grade4': 197, 'exclude_ucsf_biopsy_prior': 220}
+Candidate iteration-2 cohort:
+label    0   1
+cohort        
+UCSF    71   9
+UTSW    39  37
+
+Candidate filter (UTSW manually refined segmentations + UCSF without prior biopsy): 156 patients, 46 codeleted / 110 non-codeleted -> MATCHES iteration 2 (156: 46/110).
+In this candidate cohort, cohort membership alone gives AUROC 0.725 (codeletion prevalence UTSW 0.49, UCSF 0.11).
+Spatial-metric unit test on toy patch grids:
+              comp_h0  comp_h1  comp_h2  entropy_norm  mixing_obs  mixing_excess  mixing_z  radial_eta2_excess  radial_eta2_z  depth_shift_h0  depth_shift_h1  depth_shift_h2
+segregated      0.500    0.500      0.0         0.631       0.067         -0.435   -19.570              -0.005         -0.727           0.000           0.000             0.0
+checkerboard    0.500    0.500      0.0         0.631       1.000          0.499    23.587              -0.004         -0.711           0.000           0.000             0.0
+random          0.500    0.500      0.0         0.631       0.548          0.045     2.108              -0.004         -0.582           0.007          -0.007             0.0
+radial          0.296    0.704      0.0         0.553       0.178         -0.242   -13.549               0.886        113.121           0.317          -0.133             0.0
+
+PASS Spatial metrics behave as expected on toy grids (composition-equal arrangements separated) — segregated mixing_z < -3, checkerboard > +3, random within ±3, radial eta2_z > +3, absent habitat shift = 0
+[4-5 Cohort ingestion, integrity checks, eligibility: 0 s]
+
+##############################################################################
+# 6 Cohort audit
+##############################################################################
+Table 1 (by cohort and label):
+                                                      UCSF | 1p/19q non-codeleted                  UCSF | 1p/19q codeleted                       UTSW | 1p/19q non-codeleted                           UTSW | 1p/19q codeleted
+n                                                                              84                                        9                                                77                                                63
+age, mean (SD)                                                        37.9 (10.9)                              43.4 (14.6)                                        36.3 (9.5)                                       43.9 (13.3)
+age, median [IQR]                                                      36 [31–44]                               44 [35–48]                                        35 [28–42]                                        42 [32–54]
+male, n (%)                                                              50 (60%)                                  5 (56%)                                          43 (56%)                                          32 (51%)
+grade 2 / 3 / 4 / NA                                             35 / 27 / 22 / 0                            9 / 0 / 0 / 0                                  37 / 26 / 14 / 0                                   40 / 23 / 0 / 0
+field strength 1.5 T / 3 T / other / NA                            0 / 0 / 0 / 84                            0 / 0 / 0 / 9                                   52 / 20 / 1 / 4                                   40 / 17 / 2 / 4
+segmentation provenance                  BraTS21 ensemble + manual correction: 84  BraTS21 ensemble + manual correction: 9  FeTS + manual refinement: 39; FeTS automatic: 38  FeTS + manual refinement: 37; FeTS automatic: 26
+
+Codeletion prevalence by cohort:
+          n  codeleted  prevalence     95% CI
+cohort                                       
+UCSF     93          9    0.096774  0.05–0.17
+UTSW    140         63    0.450000  0.37–0.53
+
+Odds of codeletion, UTSW vs UCSF: OR 7.57 (3.45–18.52), Fisher p = 3.4e-09
+AUROC of cohort membership alone (pooled eligible cohort, n = 233, 72 codeleted): 0.698 (0.643–0.752)
+PASS Cohort–label association quantified — cohort-only AUROC 0.698
+Clinical and acquisition variables by label:
+  cohort                variable  codeleted median  non-codeleted median                                    effect  estimate (95% CI)         p
+0   UCSF             age (years)              44.0                  36.0  rank-biserial r (>0: older if codeleted)  0.25 (-0.19–0.67)  0.219123
+1   UCSF                male sex               NaN                   NaN               odds ratio (male vs female)   0.85 (0.17–4.62)  1.000000
+2   UTSW             age (years)              42.0                  35.0  rank-biserial r (>0: older if codeleted)   0.33 (0.14–0.51)  0.000783
+3   UTSW                male sex               NaN                   NaN               odds ratio (male vs female)   0.82 (0.40–1.68)  0.610819
+4   UTSW  3 T (vs 1.5 T) scanner               NaN                   NaN                                odds ratio   1.10 (0.48–2.55)  0.846024
+
+Grade is post-operative pathology: it is described above but never used as a predictor.
+[6 Cohort audit: 8 s]
+
+##############################################################################
+# 7 Imaging quality control
+##############################################################################
+Patients entering imaging QC: 243 | by cohort, primary-set membership and label:
+label               0   1
+cohort in_primary        
+UCSF   False        6   4
+       True        84   9
+UTSW   True        77  63
+
+Imaging QC status:
+               patients
+qc_status              
+ok                  156
+missing_files        87
+
+QC status by cohort and label (patients):
+qc_status     missing_files  ok
+cohort label                   
+UCSF   0                 19  71
+       1                  4   9
+UTSW   0                 38  39
+       1                 26  37
+
+Segmentation label sets by cohort:
+                   patients
+cohort seg_labels          
+UCSF   0 2               48
+       0 1 2 4           20
+       0 2 4             11
+       0 1 2              1
+UTSW   0 1 2             22
+       0 2               16
+       0 1 2 4           13
+       0 3               12
+       0 1 2 3 4          9
+       0 2 4              2
+       0 3 4              2
+
+PASS Imaging available for at least one eligible patient — imaging sections will run
+[7 Imaging quality control: 112 s]
+
+##############################################################################
+# 8 Patch construction and feature extraction
+##############################################################################
+[Parallel(n_jobs=3)]: Using backend LokyBackend with 3 concurrent workers.
+[Parallel(n_jobs=3)]: Done   2 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=3)]: Done   7 tasks      | elapsed:  2.5min
+[Parallel(n_jobs=3)]: Done  12 tasks      | elapsed:  3.6min
+[Parallel(n_jobs=3)]: Done  19 tasks      | elapsed:  6.2min
+[Parallel(n_jobs=3)]: Done  26 tasks      | elapsed:  8.1min
+[Parallel(n_jobs=3)]: Done  35 tasks      | elapsed: 10.7min
+[Parallel(n_jobs=3)]: Done  44 tasks      | elapsed: 12.5min
+[Parallel(n_jobs=3)]: Done  55 tasks      | elapsed: 15.5min
+[Parallel(n_jobs=3)]: Done  66 tasks      | elapsed: 17.8min
+[Parallel(n_jobs=3)]: Done  79 tasks      | elapsed: 21.0min
+[Parallel(n_jobs=3)]: Done  92 tasks      | elapsed: 23.1min
+[Parallel(n_jobs=3)]: Done 107 tasks      | elapsed: 25.0min
+[Parallel(n_jobs=3)]: Done 122 tasks      | elapsed: 27.0min
+[Parallel(n_jobs=3)]: Done 139 tasks      | elapsed: 30.3min
+[Parallel(n_jobs=3)]: Done 156 out of 156 | elapsed: 33.5min finished
+Extraction finished for 156 patients in 2011 s (cached patients are instant).
+Extraction status:
+            patients
+status              
+ok               150
+no_patches         6
+
+Patches: 5105 from 150 patients
+PASS Shape features stored once per patch (not per modality) — 14 shape columns
+PASS Same number of features for every modality — {"T1": 93, "T1CE": 93, "T2": 93, "FLAIR": 93}
+PASS No duplicated patch rows
+Exclusions by cohort and class (primary label set):
+label                                               1p/19q codeleted  1p/19q non-codeleted
+cohort outcome                                                                            
+UCSF   excluded: imaging QC                                        0                    13
+       excluded: no valid patch / extraction error                 1                     3
+       habitat-evaluable                                           8                    68
+UTSW   excluded: imaging QC                                       26                    38
+       excluded: no valid patch / extraction error                 1                     1
+       habitat-evaluable                                          36                    38
+
+Excluded: 28/72 codeleted vs 55/161 non-codeleted (Fisher p = 0.554)
+Tumour volume (mL) by evaluability and class:
+                                                   count   25%   50%    75%
+outcome                                     label                          
+excluded: no valid patch / extraction error 0        4.0   3.0   4.9    6.7
+                                            1        2.0   6.0   6.3    6.7
+habitat-evaluable                           0      106.0  39.1  68.1  122.4
+                                            1       44.0  30.9  53.6  100.8
+
+[8 Patch construction and feature extraction: 2015 s]
+
+##############################################################################
+# 9-10 Descriptive habitat model and spatial-metric checks
+##############################################################################
+Descriptive model: 5105 patches, 372 habitat features (0 dropped as constant/non-finite), 43 PCs, K = 4 (4 s)
+K selection (descriptive model):
+   K  ARI_mean  ARI_sd  silhouette      inertia  min_share
+0  3     0.541   0.090       0.111  1450114.868      0.254
+1  4     0.572   0.151       0.078  1377208.962      0.147
+2  5     0.417   0.102       0.068  1322151.104      0.095
+3  6     0.403   0.114       0.079  1269421.728      0.098
+4  7     0.425   0.074       0.079  1231146.160      0.084
+5  8     0.388   0.089       0.077  1202170.987      0.058
+
+PASS Phenotype columns are exact Mean features (no MeanAbsoluteDeviation) — T1__original_firstorder_Mean, T1CE__original_firstorder_Mean, T2__original_firstorder_Mean, FLAIR__original_firstorder_Mean
+Habitat phenotypes (median patch mean intensity, brain z-score):
+         patches    T1  T1CE    T2  FLAIR  median depth_norm (0 = margin)
+habitat                                                                  
+0            681 -0.06  0.18  0.93   1.18                            0.30
+1           1193 -0.55 -0.70  1.79   1.76                            0.33
+2           1998 -0.07 -0.26  1.03   1.55                            0.30
+3           1233 -0.09 -0.29  0.88   1.22                            0.30
+
+Habitat x cohort (patches); Cramér's V = 0.34
+cohort   UCSF  UTSW  UCSF share
+habitat                        
+0         336   345        0.49
+1         352   841        0.30
+2         974  1024        0.49
+3         967   266        0.78
+
+Per-patient share of the dominant habitat: median 0.86; 46% of patients have >=90% of patches in one habitat.
+Spearman rho of spatial metrics with size / patch count / composition:
+covariate           log_volume  n_habitats_present  n_patches
+metric                                                       
+entropy_norm              0.71                0.94       0.68
+mixing_excess            -0.68               -0.70      -0.66
+mixing_obs                0.34                0.78       0.31
+mixing_z                 -0.75               -0.73      -0.74
+radial_eta2_excess        0.39                0.48       0.38
+radial_eta2_z             0.43                0.48       0.45
+
+Patients with spatial metrics defined: 126/150
+[9-10 Descriptive habitat model and spatial-metric checks: 5 s]
+
+##############################################################################
+# 12 Leakage-free cross-validation
+##############################################################################
+Base table: (243, 394)
+
+=== UTSW_meta: 140 patients (63 codeleted) | models ['M1_clin']
+  repeat 1/10 done (11 s)
+  repeat 2/10 done (23 s)
+  repeat 3/10 done (32 s)
+  repeat 4/10 done (43 s)
+  repeat 5/10 done (55 s)
+  repeat 6/10 done (64 s)
+  repeat 7/10 done (76 s)
+  repeat 8/10 done (87 s)
+  repeat 9/10 done (96 s)
+  repeat 10/10 done (108 s)
+PASS [UTSW_meta] train/test disjoint and habitat fit on training patients only (all folds) — 50 folds asserted
+
+=== pooled_meta: 233 patients (72 codeleted) | models ['M0', 'M1_clin']
+  repeat 1/10 done (20 s)
+  repeat 2/10 done (41 s)
+  repeat 3/10 done (63 s)
+  repeat 4/10 done (83 s)
+  repeat 5/10 done (106 s)
+  repeat 6/10 done (125 s)
+  repeat 7/10 done (146 s)
+  repeat 8/10 done (166 s)
+  repeat 9/10 done (186 s)
+  repeat 10/10 done (207 s)
+PASS [pooled_meta] train/test disjoint and habitat fit on training patients only (all folds) — 50 folds asserted
+
+=== UTSW: 74 patients (36 codeleted) | models ['M1_clin', 'M1', 'M2', 'M3', 'M4', 'M5']
+  repeat 1/10 done (117 s)
+  repeat 2/10 done (239 s)
+  repeat 3/10 done (355 s)
+  repeat 4/10 done (470 s)
+  repeat 5/10 done (588 s)
+  repeat 6/10 done (760 s)
+  repeat 7/10 done (934 s)
+  repeat 8/10 done (1091 s)
+  repeat 9/10 done (1246 s)
+  repeat 10/10 done (1401 s)
+PASS [UTSW] train/test disjoint and habitat fit on training patients only (all folds) — 50 folds asserted
+
+=== pooled: 150 patients (44 codeleted) | models ['M0', 'M1_clin', 'M1', 'M2', 'M3', 'M4', 'M5', 'M3+cohort', 'M4+cohort', 'M5+cohort']
+  repeat 1/10 done (244 s)
+  repeat 2/10 done (463 s)
+  repeat 3/10 done (700 s)
+  repeat 4/10 done (906 s)
+  repeat 5/10 done (1117 s)
+  repeat 6/10 done (1398 s)
+  repeat 7/10 done (1645 s)
+  repeat 8/10 done (1914 s)
+  repeat 9/10 done (2230 s)
+  repeat 10/10 done (2462 s)
+PASS [pooled] train/test disjoint and habitat fit on training patients only (all folds) — 50 folds asserted
+[12 Leakage-free cross-validation: 4178 s]
+
+##############################################################################
+# 13 Primary and secondary analyses
+##############################################################################
+Discrimination summary:
+            set      model    n  n_codeleted AUROC (repeat-avg OOF, 95% CI) AUROC per repeat: mean [min–max]       AUPRC (95% CI)  prevalence  Brier  sensitivity  specificity  precision     F1  balanced acc. confusion (rep 1) TP/FP/TN/FN
+0     UTSW_meta    M1_clin  140           63            0.645 (0.552–0.734)              0.646 [0.619–0.671]  0.653 (0.559–0.746)       0.450  0.234        0.500        0.761      0.632  0.556          0.631                   33/22/55/30
+1   pooled_meta         M0  233           72            0.667 (0.593–0.744)              0.688 [0.688–0.688]  0.400 (0.352–0.480)       0.309  0.228        0.875        0.522      0.450  0.594          0.698                    63/77/84/9
+2   pooled_meta    M1_clin  233           72            0.648 (0.566–0.726)              0.646 [0.634–0.662]  0.504 (0.408–0.610)       0.309  0.234        0.547        0.730      0.476  0.509          0.639                  38/41/120/34
+3          UTSW    M1_clin   74           36            0.659 (0.527–0.788)              0.651 [0.617–0.700]  0.689 (0.580–0.809)       0.486  0.237        0.575        0.700      0.647  0.607          0.638                   20/12/26/16
+4          UTSW         M1   74           36            0.656 (0.520–0.787)              0.645 [0.590–0.686]  0.689 (0.574–0.808)       0.486  0.233        0.578        0.655      0.615  0.593          0.617                   20/12/26/16
+5          UTSW         M2   74           36            0.692 (0.566–0.811)              0.656 [0.614–0.700]  0.621 (0.521–0.791)       0.486  0.231        0.744        0.484      0.579  0.649          0.614                    29/21/17/7
+6          UTSW         M3   74           36            0.607 (0.471–0.733)              0.597 [0.532–0.663]  0.561 (0.475–0.727)       0.486  0.244        0.581        0.587      0.571  0.574          0.584                   24/17/21/12
+7          UTSW         M4   74           36            0.597 (0.464–0.731)              0.593 [0.541–0.632]  0.553 (0.471–0.713)       0.486  0.245        0.594        0.547      0.557  0.571          0.571                   24/15/23/12
+8          UTSW         M5   74           36            0.643 (0.512–0.768)              0.617 [0.586–0.678]  0.601 (0.502–0.751)       0.486  0.237        0.625        0.534      0.562  0.588          0.580                    27/24/14/9
+9        pooled         M0  150           44            0.696 (0.596–0.788)              0.721 [0.721–0.721]  0.456 (0.366–0.599)       0.293  0.228        0.818        0.642      0.486  0.610          0.730                    36/38/68/8
+10       pooled    M1_clin  150           44            0.648 (0.537–0.754)              0.644 [0.610–0.672]  0.476 (0.374–0.631)       0.293  0.238        0.543        0.722      0.449  0.490          0.632                   17/21/85/27
+11       pooled         M1  150           44            0.637 (0.527–0.743)              0.637 [0.609–0.668]  0.469 (0.365–0.618)       0.293  0.238        0.502        0.741      0.449  0.472          0.621                   20/29/77/24
+12       pooled         M2  150           44            0.828 (0.762–0.893)              0.807 [0.771–0.841]  0.589 (0.484–0.742)       0.293  0.161        0.732        0.729      0.530  0.614          0.731                   28/24/82/16
+13       pooled         M3  150           44            0.567 (0.474–0.660)              0.545 [0.473–0.595]  0.329 (0.276–0.437)       0.293  0.241        0.650        0.384      0.303  0.412          0.517                    37/69/37/7
+14       pooled         M4  150           44            0.567 (0.474–0.655)              0.564 [0.494–0.622]  0.333 (0.277–0.442)       0.293  0.234        0.745        0.341      0.320  0.447          0.543                    39/71/35/5
+15       pooled         M5  150           44            0.672 (0.580–0.766)              0.631 [0.529–0.678]  0.440 (0.355–0.581)       0.293  0.223        0.557        0.596      0.368  0.440          0.577                   29/45/61/15
+16       pooled  M3+cohort  150           44            0.776 (0.695–0.854)              0.774 [0.755–0.803]  0.568 (0.462–0.726)       0.293  0.186        0.755        0.672      0.489  0.593          0.713                   34/28/78/10
+17       pooled  M4+cohort  150           44            0.800 (0.723–0.869)              0.775 [0.739–0.812]  0.563 (0.461–0.721)       0.293  0.180        0.757        0.687      0.502  0.603          0.722                    35/32/74/9
+18       pooled  M5+cohort  150           44            0.799 (0.722–0.869)              0.775 [0.729–0.808]  0.571 (0.469–0.721)       0.293  0.181        0.741        0.675      0.488  0.585          0.708                   33/33/73/11
+
+Discrimination within each cohort, from the pooled cross-validation:
+            set      model cohort    n  n_codeleted AUROC within cohort (95% CI)
+0   pooled_meta    M1_clin   UCSF   93            9          0.634 (0.406–0.837)
+1   pooled_meta    M1_clin   UTSW  140           63          0.660 (0.565–0.749)
+2        pooled    M1_clin   UCSF   76            8          0.605 (0.338–0.855)
+3        pooled    M1_clin   UTSW   74           36          0.676 (0.553–0.798)
+4        pooled         M1   UCSF   76            8          0.675 (0.426–0.893)
+5        pooled         M1   UTSW   74           36          0.630 (0.502–0.758)
+6        pooled         M2   UCSF   76            8          0.881 (0.772–0.963)
+7        pooled         M2   UTSW   74           36          0.692 (0.565–0.808)
+8        pooled         M3   UCSF   76            8          0.568 (0.368–0.763)
+9        pooled         M3   UTSW   74           36          0.466 (0.327–0.592)
+10       pooled         M4   UCSF   76            8          0.610 (0.472–0.746)
+11       pooled         M4   UTSW   74           36          0.490 (0.359–0.622)
+12       pooled         M5   UCSF   76            8          0.647 (0.414–0.858)
+13       pooled         M5   UTSW   74           36          0.631 (0.504–0.748)
+14       pooled  M3+cohort   UCSF   76            8          0.607 (0.401–0.800)
+15       pooled  M3+cohort   UTSW   74           36          0.615 (0.481–0.742)
+16       pooled  M4+cohort   UCSF   76            8          0.656 (0.474–0.807)
+17       pooled  M4+cohort   UTSW   74           36          0.655 (0.528–0.773)
+18       pooled  M5+cohort   UCSF   76            8          0.667 (0.480–0.840)
+19       pooled  M5+cohort   UTSW   74           36          0.658 (0.536–0.777)
+
+PRE-SPECIFIED PRIMARY COMPARISON:
+    set comparison  ΔAUROC (fold mean)        NB 95% CI   NB p  ΔAUROC (repeat-avg OOF) bootstrap 95% CI folds with Δ>0
+0  UTSW    M4 − M3              -0.029  -0.146 to 0.088  0.622                  -0.0095  -0.094 to 0.075          20/50
+
+Secondary comparisons (Benjamini–Hochberg across those evaluated):
+           set             comparison  ΔAUROC (fold mean)         NB 95% CI    NB p  ΔAUROC (repeat-avg OOF) bootstrap 95% CI folds with Δ>0  NB p (BH-adjusted)
+0         UTSW                M3 − M1             -0.0279   -0.180 to 0.124  0.7143                  -0.0490  -0.205 to 0.106          22/50              0.8035
+1         UTSW                M3 − M2             -0.0496   -0.187 to 0.088  0.4733                  -0.0855  -0.220 to 0.052          21/50              0.8035
+2         UTSW                M5 − M1             -0.0248   -0.141 to 0.091  0.6686                  -0.0132  -0.125 to 0.105          20/50              0.8035
+3         UTSW                M4 − M2             -0.0785   -0.226 to 0.069  0.2899                  -0.0950  -0.236 to 0.061          14/50              0.6523
+4       pooled                M4 − M3              0.0258   -0.082 to 0.134  0.6324                   0.0002  -0.094 to 0.094          33/50              0.8035
+5       pooled                M3 − M0             -0.1878  -0.308 to -0.068  0.0029                  -0.1292  -0.250 to 0.000           5/50              0.0259
+6       pooled  M4+cohort − M3+cohort             -0.0012   -0.058 to 0.055  0.9661                   0.0238  -0.012 to 0.060          28/50              0.9661
+7       pooled         M5+cohort − M1              0.1481    0.040 to 0.257  0.0085                   0.1619   0.052 to 0.273          46/50              0.0383
+8  pooled_meta           M1_clin − M0             -0.0544   -0.132 to 0.023  0.1647                  -0.0195  -0.139 to 0.095          12/50              0.4942
+
+Exploratory univariate associations (descriptive habitats):
+       set             feature  n_codel  n_non  Cliff's delta (>0: higher if codeleted)       p      higher in  q (BH within set)
+2     UTSW             comp_h2       36     38                                   0.3860  0.0037      codeleted             0.0485
+1     UTSW             comp_h1       36     38                                  -0.3121  0.0184  non-codeleted             0.0957
+12    UTSW      depth_shift_h3       36     38                                  -0.2705  0.0221  non-codeleted             0.0957
+5     UTSW  n_habitats_present       36     38                                   0.2091  0.1040      codeleted             0.2972
+4     UTSW        entropy_norm       36     38                                   0.2083  0.1143      codeleted             0.2972
+7     UTSW       mixing_excess       36     38                                  -0.1901  0.1486  non-codeleted             0.3219
+3     UTSW             comp_h3       36     38                                   0.1520  0.1991      codeleted             0.3294
+8     UTSW  radial_eta2_excess       36     38                                   0.1696  0.2027      codeleted             0.3294
+6     UTSW          mixing_obs       32     32                                   0.1611  0.2655      codeleted             0.3835
+9     UTSW      depth_shift_h0       36     38                                   0.0892  0.3515      codeleted             0.4570
+10    UTSW      depth_shift_h1       36     38                                   0.0292  0.8155      codeleted             0.8839
+0     UTSW             comp_h0       36     38                                   0.0234  0.8159      codeleted             0.8839
+11    UTSW      depth_shift_h2       36     38                                  -0.0088  0.9509  non-codeleted             0.9509
+15  pooled             comp_h2       44    106                                   0.2485  0.0156      codeleted             0.2028
+25  pooled      depth_shift_h3       44    106                                  -0.1938  0.0386  non-codeleted             0.2507
+16  pooled             comp_h3       44    106                                  -0.1651  0.0878  non-codeleted             0.3653
+23  pooled      depth_shift_h1       44    106                                   0.1411  0.1124      codeleted             0.3653
+13  pooled             comp_h0       44    106                                  -0.0729  0.3551  non-codeleted             0.8550
+24  pooled      depth_shift_h2       44    106                                   0.0382  0.7037      codeleted             0.8550
+20  pooled       mixing_excess       44    106                                   0.0334  0.7405      codeleted             0.8550
+18  pooled  n_habitats_present       44    106                                  -0.0317  0.7490  non-codeleted             0.8550
+14  pooled             comp_h1       44    106                                  -0.0300  0.7609  non-codeleted             0.8550
+17  pooled        entropy_norm       44    106                                  -0.0302  0.7652  non-codeleted             0.8550
+21  pooled  radial_eta2_excess       44    106                                  -0.0281  0.7843  non-codeleted             0.8550
+22  pooled      depth_shift_h0       44    106                                   0.0210  0.7893      codeleted             0.8550
+19  pooled          mixing_obs       36     90                                  -0.0188  0.8698  non-codeleted             0.8698
+
+[13 Primary and secondary analyses: 263 s]
+
+##############################################################################
+# 13.4-13.5 Null tests
+##############################################################################
+  label permutation: UTSW ['M3', 'M4'] (200 permutations)
+  label permutation: UTSW_meta ['M1_clin'] (200 permutations)
+  label permutation: pooled_meta ['M0', 'M1_clin'] (200 permutations)
+Label-permutation test:
+           set    model  observed AUROC (cohort-stratified folds)  null mean  null 95th pct  p (one-sided)  n_perm
+0         UTSW       M3                                    0.5921     0.4992         0.6255         0.1343     200
+1         UTSW       M4                                    0.5848     0.5009         0.6288         0.2040     200
+2    UTSW_meta  M1_clin                                    0.5992     0.4819         0.5725         0.0249     200
+3  pooled_meta       M0                                    0.6515     0.6591         0.6839         0.6816     200
+4  pooled_meta  M1_clin                                    0.6247     0.4988         0.5747         0.0050     200
+
+PASS Permuted and observed runs share identical label-independent folds — asserted
+(743 s) Note: permuting within cohort keeps each cohort's prevalence, so M0 (cohort only) is expected to score about the same under permutation; a large p for M0 is the intended behaviour.
+Spatial-arrangement null (100 replicates, 122 s): observed ΔAUROC (repeat 1) = -0.020; null mean -0.016, 95th percentile 0.059; p = 0.475
+[13.4-13.5 Null tests: 865 s]
+
+##############################################################################
+# 14 Cross-cohort generalisation
+##############################################################################
+Leave-one-cohort-out:
+                    train                   test    model                                       status    K       AUROC (95% CI)       AUPRC (95% CI)  test prevalence  sensitivity  specificity TP/FP/TN/FN     Brier transductive harmonisation
+0  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)  M1_clin                                          run  3.0  0.585 (0.346–0.824)  0.207 (0.105–0.515)            0.105        0.625     0.661765   5/23/45/3  0.237478                       none
+1  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)       M1                                          run  3.0  0.511 (0.246–0.767)  0.161 (0.090–0.426)            0.105        0.500     0.632353   4/25/43/4  0.248764                       none
+2  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)       M2                                          run  3.0  0.757 (0.553–0.906)  0.275 (0.164–0.599)            0.105        0.875     0.602941   7/27/41/1  0.331414                       none
+3  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)       M3                                          run  3.0  0.890 (0.838–0.934)  0.348 (0.267–0.471)            0.105        1.000     0.455882   8/37/31/0  0.266654                       none
+4  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)       M4                                          run  3.0  0.673 (0.524–0.819)  0.198 (0.145–0.349)            0.105        1.000     0.161765   8/57/11/0  0.267767                       none
+5  UTSW (n=74, 36 codel.)  UCSF (n=76, 8 codel.)       M5                                          run  3.0  0.667 (0.483–0.849)  0.202 (0.123–0.478)            0.105        0.875     0.338235   7/45/23/1  0.274390                       none
+6                    UCSF                   UTSW      all  NOT RUN: 8 codeleted training patients < 20  NaN                  NaN                  NaN              NaN          NaN          NaN         NaN       NaN                        NaN
+
+Habitat × cohort association in pooled training folds: Cramér's V median 0.33 [0.26–0.62]. Values near 1 mean habitats are cohort signatures.
+[14 Cross-cohort generalisation: 91 s]
+
+##############################################################################
+# 15 Calibration, importance, robustness
+##############################################################################
+Calibration:
+    set    model  slope  intercept_citl  brier
+0  UTSW  M1_clin  1.895          -0.041  0.237
+1  UTSW       M1  1.154          -0.040  0.233
+2  UTSW       M2  0.542          -0.078  0.231
+3  UTSW       M3  0.968          -0.109  0.244
+4  UTSW       M4  0.769          -0.080  0.245
+5  UTSW       M5  1.100          -0.086  0.237
+
+Grouped permutation importance (M4, first-repeat test folds):
+               mean     std  count
+group                             
+composition  0.0899  0.1048      5
+spatial     -0.0046  0.0586      5
+
+  robustness: fixed K = 4
+  robustness: fixed K = 5
+  robustness: fixed K = 6
+  robustness: fixed K = 7
+  robustness: fixed K = 8
+  robustness: pooled per-cohort harmonisation
+Robustness of the primary Δ (M4 − M3, first-repeat folds):
+                                                        variant    n  n_codeleted  ΔAUROC (fold mean)        NB 95% CI K per fold
+0                                             UTSW: fixed K = 4   74           36             -0.0255  -0.144 to 0.093  4,4,4,4,4
+1                                             UTSW: fixed K = 5   74           36             -0.0832  -0.363 to 0.196  5,5,5,5,5
+2                                             UTSW: fixed K = 6   74           36             -0.0296  -0.122 to 0.063  6,6,6,6,6
+3                                             UTSW: fixed K = 7   74           36             -0.0224  -0.196 to 0.151  7,7,7,7,7
+4                                             UTSW: fixed K = 8   74           36              0.0128  -0.139 to 0.165  8,8,8,8,8
+5                            UTSW: exclude_histology_discordant   70           36             -0.0307  -0.106 to 0.044  3,4,3,3,3
+6                                          UTSW: exclude_grade4   69           36             -0.0366  -0.174 to 0.100  3,3,7,3,3
+7      pooled: per-cohort z-score harmonisation (training-only)  150           44             -0.0412  -0.256 to 0.174  3,3,3,3,3
+8  pooled: UCSF relative/unknown resolved by WHO 2021 diagnosis  150           44              0.0559  -0.047 to 0.159  3,3,5,3,3
+
+[15 Calibration, importance, robustness: 283 s]
+
+##############################################################################
+# 16-18 Figures, conclusion, manifest
+##############################################################################
+CONCLUSION
+- Eligible IDH-mutant patients with a resolved 1p/19q label: 233 (UTSW 140, UCSF 93); codeleted 72.
+- Cohort membership alone gives a pooled AUROC of 0.698 (0.643–0.752) (UTSW vs UCSF odds ratio for codeletion 7.57).
+- Habitat-evaluable patients (all sets, incl. label-sensitivity extras): 150.
+- UTSW_meta · M1_clin (n=140, 63 codel.): AUROC 0.645 (0.552–0.734).
+- pooled_meta · M0 (n=233, 72 codel.): AUROC 0.667 (0.593–0.744).
+- pooled_meta · M1_clin (n=233, 72 codel.): AUROC 0.648 (0.566–0.726).
+- UTSW · M1_clin (n=74, 36 codel.): AUROC 0.659 (0.527–0.788).
+- UTSW · M1 (n=74, 36 codel.): AUROC 0.656 (0.520–0.787).
+- UTSW · M2 (n=74, 36 codel.): AUROC 0.692 (0.566–0.811).
+- UTSW · M3 (n=74, 36 codel.): AUROC 0.607 (0.471–0.733).
+- UTSW · M4 (n=74, 36 codel.): AUROC 0.597 (0.464–0.731).
+- UTSW · M5 (n=74, 36 codel.): AUROC 0.643 (0.512–0.768).
+- pooled · M0 (n=150, 44 codel.): AUROC 0.696 (0.596–0.788).
+- pooled · M1_clin (n=150, 44 codel.): AUROC 0.648 (0.537–0.754).
+- pooled · M1 (n=150, 44 codel.): AUROC 0.637 (0.527–0.743).
+- pooled · M2 (n=150, 44 codel.): AUROC 0.828 (0.762–0.893).
+- pooled · M3 (n=150, 44 codel.): AUROC 0.567 (0.474–0.660).
+- pooled · M4 (n=150, 44 codel.): AUROC 0.567 (0.474–0.655).
+- pooled · M5 (n=150, 44 codel.): AUROC 0.672 (0.580–0.766).
+- pooled · M3+cohort (n=150, 44 codel.): AUROC 0.776 (0.695–0.854).
+- pooled · M4+cohort (n=150, 44 codel.): AUROC 0.800 (0.723–0.869).
+- pooled · M5+cohort (n=150, 44 codel.): AUROC 0.799 (0.722–0.869).
+- Primary ΔAUROC (M4 − M3, UTSW): -0.029 (Nadeau–Bengio 95% CI -0.146 to 0.088); spatial-arrangement null p = 0.475.
+- By the pre-specified rule, H1 is **NOT SUPPORTED**.
+- Secondary UTSW: M3 − M1 = -0.028 (NB 95% CI -0.180 to 0.124; BH-adjusted p = 0.804).
+- Secondary UTSW: M3 − M2 = -0.050 (NB 95% CI -0.187 to 0.088; BH-adjusted p = 0.804).
+- Secondary UTSW: M5 − M1 = -0.025 (NB 95% CI -0.141 to 0.091; BH-adjusted p = 0.804).
+- Secondary UTSW: M4 − M2 = -0.079 (NB 95% CI -0.226 to 0.069; BH-adjusted p = 0.652).
+- Secondary pooled: M4 − M3 = 0.026 (NB 95% CI -0.082 to 0.134; BH-adjusted p = 0.804).
+- Secondary pooled: M3 − M0 = -0.188 (NB 95% CI -0.308 to -0.068; BH-adjusted p = 0.026).
+- Secondary pooled: M4+cohort − M3+cohort = -0.001 (NB 95% CI -0.058 to 0.055; BH-adjusted p = 0.966).
+- Secondary pooled: M5+cohort − M1 = 0.148 (NB 95% CI 0.040 to 0.257; BH-adjusted p = 0.038).
+- Secondary pooled_meta: M1_clin − M0 = -0.054 (NB 95% CI -0.132 to 0.023; BH-adjusted p = 0.494).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M1_clin: AUROC 0.585 (0.346–0.824).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M1: AUROC 0.511 (0.246–0.767).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M2: AUROC 0.757 (0.553–0.906).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M3: AUROC 0.890 (0.838–0.934).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M4: AUROC 0.673 (0.524–0.819).
+- Leave-one-cohort-out UTSW (n=74, 36 codel.) → UCSF (n=76, 8 codel.), M5: AUROC 0.667 (0.483–0.849).
+- Leave-one-cohort-out UCSF → UTSW: NOT RUN: 8 codeleted training patients < 20.
+Study checklist:
+                                                                                                                       result                                                                                                                       detail
+UTSW source IDs unique                                                                                                   PASS                                                                                                            625 unique of 625
+UCSF source IDs unique                                                                                                   PASS                                                                                                            501 unique of 501
+Every UCSF follow-up has exactly one baseline row                                                                        PASS                                                                                                             6 follow-up rows
+UCSF canonical patient IDs unique after removing follow-ups                                                              PASS                                                                                                                 495 patients
+No patient ID shared across cohorts                                                                                      PASS                                                                                                                             
+No IDH-wildtype tumour labelled codeleted                                                                                PASS                                                                                                                      0 cases
+No grade-4 tumour labelled codeleted                                                                                     PASS                                                                                                                      0 cases
+Eligible cohort is IDH-mutant only                                                                                       PASS                                                                                                                 233 patients
+Spatial metrics behave as expected on toy grids (composition-equal arrangements separated)                               PASS                  segregated mixing_z < -3, checkerboard > +3, random within ±3, radial eta2_z > +3, absent habitat shift = 0
+Cohort–label association quantified                                                                                      PASS                                                                                                      cohort-only AUROC 0.698
+Imaging available for at least one eligible patient                                                                      PASS                                                                                                    imaging sections will run
+Shape features stored once per patch (not per modality)                                                                  PASS                                                                                                             14 shape columns
+Same number of features for every modality                                                                               PASS                                                                                {"T1": 93, "T1CE": 93, "T2": 93, "FLAIR": 93}
+No duplicated patch rows                                                                                                 PASS                                                                                                                             
+Phenotype columns are exact Mean features (no MeanAbsoluteDeviation)                                                     PASS  T1__original_firstorder_Mean, T1CE__original_firstorder_Mean, T2__original_firstorder_Mean, FLAIR__original_firstorder_Mean
+[UTSW_meta] train/test disjoint and habitat fit on training patients only (all folds)                                    PASS                                                                                                            50 folds asserted
+[pooled_meta] train/test disjoint and habitat fit on training patients only (all folds)                                  PASS                                                                                                            50 folds asserted
+[UTSW] train/test disjoint and habitat fit on training patients only (all folds)                                         PASS                                                                                                            50 folds asserted
+[pooled] train/test disjoint and habitat fit on training patients only (all folds)                                       PASS                                                                                                            50 folds asserted
+Permuted and observed runs share identical label-independent folds                                                       PASS                                                                                                                     asserted
+Primary comparison pre-specified before imaging results                                     PASS (decided from metadata only)                                                                                                                          NaN
+Habitat model refitted inside every training fold                                                    PASS (asserted per fold)                                                                                                                          NaN
+Shape features excluded from habitat clustering                                                PASS (habitat_columns asserts)                                                                                                                          NaN
+Spatial metrics composition-adjusted (within-patient permutation null)                                 PASS (by construction)                                                                                                                          NaN
+Thresholds chosen on training folds only                                                          PASS (train_only_threshold)                                                                                                                          NaN
+Label-permutation test reruns the full learning procedure on label-independent folds                                     PASS                                                                                                                          NaN
+Leave-one-cohort-out run only when training events are sufficient                                                        PASS                                                                                                                          NaN
+External untouched cohort                                                                                       NOT AVAILABLE                                                                                                                          NaN
+
+Manifest written to /mnt/f/Downloads/1P19Q CLAUDE CODE/habitat_1p19q/outputs/manifest.json | automated checks: {'PASS': 20}
+[16-18 Figures, conclusion, manifest: 4 s]

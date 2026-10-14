@@ -1,0 +1,7 @@
+,followup_source_id,patient_id,baseline_rows,baseline_source_id,idh_status,conflicting_fields
+0,UCSF-PDGM-0429_FU003d,UCSF-PDGM-0429,1,UCSF-PDGM-429,wildtype,none
+1,UCSF-PDGM-0396_FU175d,UCSF-PDGM-0396,1,UCSF-PDGM-396,wildtype,none
+2,UCSF-PDGM-0409_FU001d,UCSF-PDGM-0409,1,UCSF-PDGM-409,wildtype,none
+3,UCSF-PDGM-0431_FU001d,UCSF-PDGM-0431,1,UCSF-PDGM-431,wildtype,none
+4,UCSF-PDGM-0391_FU016d,UCSF-PDGM-0391,1,UCSF-PDGM-391,wildtype,none
+5,UCSF-PDGM-0433_FU007d,UCSF-PDGM-0433,1,UCSF-PDGM-433,wildtype,none

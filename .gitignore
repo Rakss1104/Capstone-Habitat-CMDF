@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# Patient data: never commit. Images, segmentations and metadata come from the
+# UTSW and UCSF-PDGM releases (TCIA); obtain them from the source under its terms.
+# Only the notebook in the dataset folder is tracked.
+# ---------------------------------------------------------------------------
+/1P19Q -Dataset/*
+!/1P19Q -Dataset/*.ipynb
+
+# Any stray imaging or array files elsewhere
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.dcm
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# ---------------------------------------------------------------------------
+# Regenerable caches (tens of MB; rebuilt by the pipelines)
+# ---------------------------------------------------------------------------
+# Habitat per-patient patch-radiomics cache (~43 MB, 156 JSON); needs WSL + PyRadiomics to rebuild
+habitat_1p19q/outputs/features/per_patient/
+habitat_1p19q/outputs/cache/
+# CMDF data cache and resume checkpoint (17 MB + 36 MB)
+CMDF/outputs/cache/
+*.pkl
+*.pickle
+*.joblib
+
+# Verbose run log of the model comparison (~4 MB); results are in tables/ and comparison_report.md
+models/run.log
+
+# ---------------------------------------------------------------------------
+# Python / environments / tooling
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

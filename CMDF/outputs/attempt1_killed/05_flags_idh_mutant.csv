@@ -1,0 +1,11 @@
+,UCSF,UTSW
+histology_oligodendroglioma_but_intact,0,4
+histology_astrocytoma_but_codeleted,0,2
+histology_oligoastrocytoma,0,26
+histology_glioblastoma_idh_mutant,0,20
+grade4_codeleted,0,0
+who2021_oligodendroglioma_label_not_codeleted,4,0
+who2021_astrocytoma_label_codeleted,2,0
+ucsf_relative_codeletion,6,0
+ucsf_biopsy_prior_to_imaging,13,0
+idh_wildtype_codeleted,0,0

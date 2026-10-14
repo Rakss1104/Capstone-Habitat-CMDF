@@ -1,0 +1,244 @@
+,patient_id,cohort,label,subject_dir,missing,seg_labels,spacing,size,tumour_volume_ml,geometry_mismatch,qc_status
+0,UTSW-BT0003,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0003,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,123.107,,ok
+1,UTSW-BT0007,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0007,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,173.633,,ok
+2,UTSW-BT0011,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0011,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,170.328,,ok
+3,UTSW-BT0015,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0015,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,35.325,,ok
+4,UTSW-BT0018,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0018,SEG,,,,,,missing_files
+5,UTSW-BT0021,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0021,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,64.246,,ok
+6,UTSW-BT0041,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0041,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,31.847,,ok
+7,UTSW-BT0045,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0045,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,161.269,,ok
+8,UTSW-BT0075,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0075,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,37.572,,ok
+9,UTSW-BT0120,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0120,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,33.289,,ok
+10,UTSW-BT0129,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0129,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,47.987,,ok
+11,UTSW-BT0150,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0150,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,62.611,,ok
+12,UTSW-BT0179,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0179,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,23.671,,ok
+13,UTSW-BT0181,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0181,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,243.593,,ok
+14,UTSW-BT0182,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0182,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,93.425,,ok
+15,UTSW-BT0183,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0183,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,56.727,,ok
+16,UTSW-BT0188,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0188,,0 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,88.132,,ok
+17,UTSW-BT0190,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0190,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,127.484,,ok
+18,UTSW-BT0196,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0196,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,238.037,,ok
+19,UTSW-BT0204,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0204,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,7.552,,ok
+20,UTSW-BT0212,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0212,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,110.308,,ok
+21,UTSW-BT0220,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0220,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,27.964,,ok
+22,UTSW-BT0227,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0227,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,44.746,,ok
+23,UTSW-BT0233,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0233,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,52.62,,ok
+24,UTSW-BT0244,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0244,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,25.877,,ok
+25,UTSW-BT0246,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0246,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,35.761,,ok
+26,UTSW-BT0251,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0251,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,96.803,,ok
+27,UTSW-BT0252,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0252,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,30.798,,ok
+28,UTSW-BT0269,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0269,,0 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,209.589,,ok
+29,UTSW-BT0270,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0270,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,150.455,,ok
+30,UTSW-BT0282,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0282,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,25.337,,ok
+31,UTSW-BT0285,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0285,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,43.048,,ok
+32,UTSW-BT0295,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0295,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,21.922,,ok
+33,UTSW-BT0310,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0310,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,195.568,,ok
+34,UTSW-BT0311,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0311,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,172.061,,ok
+35,UTSW-BT0312,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0312,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,58.062,,ok
+36,UTSW-BT0315,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0315,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,187.406,,ok
+37,UTSW-BT0319,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0319,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,41.32,,ok
+38,UTSW-BT0324,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0324,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,49.911,,ok
+39,UTSW-BT0333,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0333,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,51.078,,ok
+40,UTSW-BT0336,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0336,,0 3,1.00 x 1.00 x 1.00,240 x 240 x 155,25.803,,ok
+41,UTSW-BT0345,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0345,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,91.948,,ok
+42,UTSW-BT0347,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0347,SEG,,,,,,missing_files
+43,UTSW-BT0367,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0367,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,38.348,,ok
+44,UTSW-BT0374,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0374,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,54.675,,ok
+45,UTSW-BT0385,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0385,SEG,,,,,,missing_files
+46,UTSW-BT0397,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0397,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,22.297,,ok
+47,UTSW-BT0407,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0407,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,163.831,,ok
+48,UTSW-BT0427,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0427,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,37.157,,ok
+49,UTSW-BT0431,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0431,SEG,,,,,,missing_files
+50,UTSW-BT0436,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0436,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,112.019,,ok
+51,UTSW-BT0438,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0438,SEG,,,,,,missing_files
+52,UTSW-BT0460,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0460,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,39.07,,ok
+53,UTSW-BT0468,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0468,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,141.744,,ok
+54,UTSW-BT0469,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0469,SEG,,,,,,missing_files
+55,UTSW-BT0472,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0472,SEG,,,,,,missing_files
+56,UTSW-BT0484,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0484,SEG,,,,,,missing_files
+57,UTSW-BT0490,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0490,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,23.441,,ok
+58,UTSW-BT0501,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0501,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,82.335,,ok
+59,UTSW-BT0533,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0533,,0 1 2 3 4,1.00 x 1.00 x 1.00,240 x 240 x 155,344.204,,ok
+60,UTSW-BT0602,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0602,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,162.888,,ok
+61,UTSW-BT0612,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0612,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,57.109,,ok
+62,UTSW-BT0621,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0621,SEG,,,,,,missing_files
+63,UTSW-BT0643,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0643,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,56.852,,ok
+64,UTSW-BT0645,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0645,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,77.476,,ok
+65,UTSW-BT0660,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0660,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,35.574,,ok
+66,UTSW-BT0663,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0663,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,167.487,,ok
+67,UTSW-BT0680,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0680,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,97.025,,ok
+68,UTSW-BT0687,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0687,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,93.4,,ok
+69,UTSW-BT0692,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0692,SEG,,,,,,missing_files
+70,UTSW-BT0694,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0694,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,58.356,,ok
+71,UTSW-BT0695,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0695,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,59.424,,ok
+72,UTSW-BT0697,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0697,SEG,,,,,,missing_files
+73,UTSW-BT0709,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0709,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,34.276,,ok
+74,UTSW-BT0712,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0712,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,8.654,,ok
+75,UTSW-BT0713,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0713,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,53.135,,ok
+76,UTSW-BT0721,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0721,SEG,,,,,,missing_files
+77,UTSW-BT0735,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0735,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,85.189,,ok
+78,UTSW-BT0749,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0749,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,276.273,,ok
+79,UTSW-BT0750,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0750,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,125.551,,ok
+80,UTSW-BT0752,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0752,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,50.164,,ok
+81,UTSW-BT0753,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0753,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,60.292,,ok
+82,UTSW-BT0784,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0784,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,17.049,,ok
+83,UTSW-BT0794,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0794,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,18.007,,ok
+84,UTSW-BT0796,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0796,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,5.667,,ok
+85,UTSW-BT0802,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0802,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,172.998,,ok
+86,UTSW-BT0812,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0812,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,12.937,,ok
+87,UTSW-BT0829,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0829,SEG,,,,,,missing_files
+88,UTSW-BT0848,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0848,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,11.148,,ok
+89,UTSW-BT0915,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0915,SEG,,,,,,missing_files
+90,UTSW-BT0928,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0928,SEG,,,,,,missing_files
+91,UTSW-BT0931,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0931,SEG,,,,,,missing_files
+92,UTSW-BT0950,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0950,SEG,,,,,,missing_files
+93,UTSW-BT0951,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0951,SEG,,,,,,missing_files
+94,UTSW-BT0955,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0955,SEG,,,,,,missing_files
+95,UTSW-BT0958,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0958,SEG,,,,,,missing_files
+96,UTSW-BT0960,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0960,SEG,,,,,,missing_files
+97,UTSW-BT0961,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0961,SEG,,,,,,missing_files
+98,UTSW-BT0965,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0965,SEG,,,,,,missing_files
+99,UTSW-BT0969,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0969,SEG,,,,,,missing_files
+100,UTSW-BT0971,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT0971,SEG,,,,,,missing_files
+101,UTSW-BT1011,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1011,SEG,,,,,,missing_files
+102,UTSW-BT1012,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1012,SEG,,,,,,missing_files
+103,UTSW-BT1015,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1015,SEG,,,,,,missing_files
+104,UTSW-BT1018,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1018,SEG,,,,,,missing_files
+105,UTSW-BT1021,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1021,SEG,,,,,,missing_files
+106,UTSW-BT1023,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1023,SEG,,,,,,missing_files
+107,UTSW-BT1050,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1050,SEG,,,,,,missing_files
+108,UTSW-BT1051,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1051,SEG,,,,,,missing_files
+109,UTSW-BT1053,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1053,SEG,,,,,,missing_files
+110,UTSW-BT1054,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1054,SEG,,,,,,missing_files
+111,UTSW-BT1056,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1056,SEG,,,,,,missing_files
+112,UTSW-BT1058,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1058,SEG,,,,,,missing_files
+113,UTSW-BT1060,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1060,SEG,,,,,,missing_files
+114,UTSW-BT1067,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1067,SEG,,,,,,missing_files
+115,UTSW-BT1071,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1071,SEG,,,,,,missing_files
+116,UTSW-BT1072,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1072,SEG,,,,,,missing_files
+117,UTSW-BT1073,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1073,SEG,,,,,,missing_files
+118,UTSW-BT1138,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1138,SEG,,,,,,missing_files
+119,UTSW-BT1139,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1139,SEG,,,,,,missing_files
+120,UTSW-BT1140,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1140,SEG,,,,,,missing_files
+121,UTSW-BT1141,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1141,SEG,,,,,,missing_files
+122,UTSW-BT1143,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1143,SEG,,,,,,missing_files
+123,UTSW-BT1146,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1146,SEG,,,,,,missing_files
+124,UTSW-BT1150,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1150,SEG,,,,,,missing_files
+125,UTSW-BT1151,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1151,SEG,,,,,,missing_files
+126,UTSW-BT1209,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1209,SEG,,,,,,missing_files
+127,UTSW-BT1213,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1213,SEG,,,,,,missing_files
+128,UTSW-BT1283,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1283,SEG,,,,,,missing_files
+129,UTSW-BT1284,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1284,SEG,,,,,,missing_files
+130,UTSW-BT1285,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1285,SEG,,,,,,missing_files
+131,UTSW-BT1286,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1286,SEG,,,,,,missing_files
+132,UTSW-BT1288,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1288,SEG,,,,,,missing_files
+133,UTSW-BT1289,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1289,SEG,,,,,,missing_files
+134,UTSW-BT1296,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1296,SEG,,,,,,missing_files
+135,UTSW-BT1297,UTSW,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1297,SEG,,,,,,missing_files
+136,UTSW-BT1298,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1298,SEG,,,,,,missing_files
+137,UTSW-BT1300,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1300,SEG,,,,,,missing_files
+138,UTSW-BT1301,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1301,SEG,,,,,,missing_files
+139,UTSW-BT1303,UTSW,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UTSW_processed/BT1303,SEG,,,,,,missing_files
+140,UCSF-PDGM-0031,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0031,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,108.956,,ok
+141,UCSF-PDGM-0061,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0061,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,263.809,,ok
+142,UCSF-PDGM-0089,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0089,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,321.345,,ok
+143,UCSF-PDGM-0124,UCSF,0,,subject folder,,,,,,missing_files
+144,UCSF-PDGM-0132,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0132,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,95.198,,ok
+145,UCSF-PDGM-0147,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0147,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,169.057,,ok
+146,UCSF-PDGM-0156,UCSF,0,,subject folder,,,,,,missing_files
+147,UCSF-PDGM-0162,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0162,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,120.39,,ok
+148,UCSF-PDGM-0174,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0174,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,226.72,,ok
+149,UCSF-PDGM-0190,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0190,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,55.808,,ok
+150,UCSF-PDGM-0205,UCSF,0,,subject folder,,,,,,missing_files
+151,UCSF-PDGM-0206,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0206,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,93.03,,ok
+152,UCSF-PDGM-0231,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0231,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,40.315,,ok
+153,UCSF-PDGM-0232,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0232,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,26.009,,ok
+154,UCSF-PDGM-0233,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0233,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,58.503,,ok
+155,UCSF-PDGM-0234,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0234,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,51.933,,ok
+156,UCSF-PDGM-0235,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0235,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,35.151,,ok
+157,UCSF-PDGM-0236,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0236,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,12.824,,ok
+158,UCSF-PDGM-0237,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0237,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,80.956,,ok
+159,UCSF-PDGM-0238,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0238,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,16.885,,ok
+160,UCSF-PDGM-0239,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0239,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,9.337,,ok
+161,UCSF-PDGM-0240,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0240,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,6.406,,ok
+162,UCSF-PDGM-0241,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0241,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,66.16,,ok
+163,UCSF-PDGM-0242,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0242,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,72.945,,ok
+164,UCSF-PDGM-0244,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0244,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,27.606,,ok
+165,UCSF-PDGM-0245,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0245,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,168.474,,ok
+166,UCSF-PDGM-0246,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0246,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,28.587,,ok
+167,UCSF-PDGM-0247,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0247,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,11.12,,ok
+168,UCSF-PDGM-0248,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0248,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,64.882,,ok
+169,UCSF-PDGM-0250,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0250,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,33.615,,ok
+170,UCSF-PDGM-0251,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0251,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,44.707,,ok
+171,UCSF-PDGM-0252,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0252,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,15.642,,ok
+172,UCSF-PDGM-0253,UCSF,0,,subject folder,,,,,,missing_files
+173,UCSF-PDGM-0255,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0255,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,1.875,,ok
+174,UCSF-PDGM-0256,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0256,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,61.305,,ok
+175,UCSF-PDGM-0257,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0257,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,39.599,,ok
+176,UCSF-PDGM-0258,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0258,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,47.57,,ok
+177,UCSF-PDGM-0259,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0259,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,78.18,,ok
+178,UCSF-PDGM-0261,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0261,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,20.418,,ok
+179,UCSF-PDGM-0262,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0262,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,105.026,,ok
+180,UCSF-PDGM-0264,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0264,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,39.057,,ok
+181,UCSF-PDGM-0265,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0265,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,38.744,,ok
+182,UCSF-PDGM-0266,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0266,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,76.81,,ok
+183,UCSF-PDGM-0267,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0267,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,51.697,,ok
+184,UCSF-PDGM-0269,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0269,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,7.008,,ok
+185,UCSF-PDGM-0272,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0272,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,52.76,,ok
+186,UCSF-PDGM-0274,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0274,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,12.642,,ok
+187,UCSF-PDGM-0282,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0282,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,69.041,,ok
+188,UCSF-PDGM-0285,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0285,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,217.292,,ok
+189,UCSF-PDGM-0286,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0286,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,71.882,,ok
+190,UCSF-PDGM-0290,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0290,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,109.201,,ok
+191,UCSF-PDGM-0298,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0298,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,29.996,,ok
+192,UCSF-PDGM-0300,UCSF,0,,subject folder,,,,,,missing_files
+193,UCSF-PDGM-0303,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0303,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,226.043,,ok
+194,UCSF-PDGM-0304,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0304,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,10.372,,ok
+195,UCSF-PDGM-0305,UCSF,0,,subject folder,,,,,,missing_files
+196,UCSF-PDGM-0307,UCSF,0,,subject folder,,,,,,missing_files
+197,UCSF-PDGM-0308,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0308,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,117.718,,ok
+198,UCSF-PDGM-0324,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0324,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,72.702,,ok
+199,UCSF-PDGM-0326,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0326,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,110.112,,ok
+200,UCSF-PDGM-0331,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0331,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,135.972,,ok
+201,UCSF-PDGM-0367,UCSF,0,,subject folder,,,,,,missing_files
+202,UCSF-PDGM-0407,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0407,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,84.284,,ok
+203,UCSF-PDGM-0415,UCSF,0,,subject folder,,,,,,missing_files
+204,UCSF-PDGM-0427,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0427,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,125.543,,ok
+205,UCSF-PDGM-0432,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0432,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,154.998,,ok
+206,UCSF-PDGM-0437,UCSF,0,,subject folder,,,,,,missing_files
+207,UCSF-PDGM-0438,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0438,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,17.351,,ok
+208,UCSF-PDGM-0439,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0439,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,16.555,,ok
+209,UCSF-PDGM-0440,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0440,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,261.985,,ok
+210,UCSF-PDGM-0441,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0441,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,70.144,,ok
+211,UCSF-PDGM-0444,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0444,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,165.124,,ok
+212,UCSF-PDGM-0445,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0445,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,34.112,,ok
+213,UCSF-PDGM-0446,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0446,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,67.236,,ok
+214,UCSF-PDGM-0460,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0460,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,111.978,,ok
+215,UCSF-PDGM-0468,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0468,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,65.423,,ok
+216,UCSF-PDGM-0469,UCSF,0,,subject folder,,,,,,missing_files
+217,UCSF-PDGM-0473,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0473,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,145.196,,ok
+218,UCSF-PDGM-0474,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0474,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,84.176,,ok
+219,UCSF-PDGM-0475,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0475,,0 1 2,1.00 x 1.00 x 1.00,240 x 240 x 155,102.361,,ok
+220,UCSF-PDGM-0476,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0476,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,3.347,,ok
+221,UCSF-PDGM-0478,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0478,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,26.92,,ok
+222,UCSF-PDGM-0482,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0482,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,157.551,,ok
+223,UCSF-PDGM-0485,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0485,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,32.122,,ok
+224,UCSF-PDGM-0489,UCSF,0,,subject folder,,,,,,missing_files
+225,UCSF-PDGM-0490,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0490,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,47.752,,ok
+226,UCSF-PDGM-0499,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0499,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,98.737,,ok
+227,UCSF-PDGM-0501,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0501,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,255.209,,ok
+228,UCSF-PDGM-0517,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0517,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,75.744,,ok
+229,UCSF-PDGM-0529,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0529,,0 1 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,149.786,,ok
+230,UCSF-PDGM-0530,UCSF,0,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0530,,0 2 4,1.00 x 1.00 x 1.00,240 x 240 x 155,189.321,,ok
+231,UCSF-PDGM-0531,UCSF,0,,subject folder,,,,,,missing_files
+232,UCSF-PDGM-0540,UCSF,1,/mnt/f/Downloads/1P19Q CLAUDE CODE/1P19Q -Dataset/UCSF/images/UCSF-PDGM-0540,,0 2,1.00 x 1.00 x 1.00,240 x 240 x 155,24.678,,ok
+233,UCSF-PDGM-0021,UCSF,0,,subject folder,,,,,,missing_files
+234,UCSF-PDGM-0044,UCSF,0,,subject folder,,,,,,missing_files
+235,UCSF-PDGM-0045,UCSF,0,,subject folder,,,,,,missing_files
+236,UCSF-PDGM-0073,UCSF,0,,subject folder,,,,,,missing_files
+237,UCSF-PDGM-0108,UCSF,0,,subject folder,,,,,,missing_files
+238,UCSF-PDGM-0119,UCSF,0,,subject folder,,,,,,missing_files
+239,UCSF-PDGM-0243,UCSF,1,,subject folder,,,,,,missing_files
+240,UCSF-PDGM-0260,UCSF,1,,subject folder,,,,,,missing_files
+241,UCSF-PDGM-0281,UCSF,1,,subject folder,,,,,,missing_files
+242,UCSF-PDGM-0535,UCSF,1,,subject folder,,,,,,missing_files

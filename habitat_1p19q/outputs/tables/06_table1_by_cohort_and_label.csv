@@ -1,0 +1,8 @@
+,UCSF | 1p/19q non-codeleted,UCSF | 1p/19q codeleted,UTSW | 1p/19q non-codeleted,UTSW | 1p/19q codeleted
+n,84,9,77,63
+"age, mean (SD)",37.9 (10.9),43.4 (14.6),36.3 (9.5),43.9 (13.3)
+"age, median [IQR]",36 [31–44],44 [35–48],35 [28–42],42 [32–54]
+"male, n (%)",50 (60%),5 (56%),43 (56%),32 (51%)
+grade 2 / 3 / 4 / NA,35 / 27 / 22 / 0,9 / 0 / 0 / 0,37 / 26 / 14 / 0,40 / 23 / 0 / 0
+field strength 1.5 T / 3 T / other / NA,0 / 0 / 0 / 84,0 / 0 / 0 / 9,52 / 20 / 1 / 4,40 / 17 / 2 / 4
+segmentation provenance,BraTS21 ensemble + manual correction: 84,BraTS21 ensemble + manual correction: 9,FeTS + manual refinement: 39; FeTS automatic: 38,FeTS + manual refinement: 37; FeTS automatic: 26

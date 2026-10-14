@@ -1,0 +1,29 @@
+,result,detail
+UTSW source IDs unique,PASS,625 unique of 625
+UCSF source IDs unique,PASS,501 unique of 501
+Every UCSF follow-up has exactly one baseline row,PASS,6 follow-up rows
+UCSF canonical patient IDs unique after removing follow-ups,PASS,495 patients
+No patient ID shared across cohorts,PASS,
+No IDH-wildtype tumour labelled codeleted,PASS,0 cases
+No grade-4 tumour labelled codeleted,PASS,0 cases
+Eligible cohort is IDH-mutant only,PASS,233 patients
+Spatial metrics behave as expected on toy grids (composition-equal arrangements separated),PASS,"segregated mixing_z < -3, checkerboard > +3, random within ±3, radial eta2_z > +3, absent habitat shift = 0"
+Cohort–label association quantified,PASS,cohort-only AUROC 0.698
+Imaging available for at least one eligible patient,PASS,imaging sections will run
+Shape features stored once per patch (not per modality),PASS,14 shape columns
+Same number of features for every modality,PASS,"{""T1"": 93, ""T1CE"": 93, ""T2"": 93, ""FLAIR"": 93}"
+No duplicated patch rows,PASS,
+Phenotype columns are exact Mean features (no MeanAbsoluteDeviation),PASS,"T1__original_firstorder_Mean, T1CE__original_firstorder_Mean, T2__original_firstorder_Mean, FLAIR__original_firstorder_Mean"
+[UTSW_meta] train/test disjoint and habitat fit on training patients only (all folds),PASS,50 folds asserted
+[pooled_meta] train/test disjoint and habitat fit on training patients only (all folds),PASS,50 folds asserted
+[UTSW] train/test disjoint and habitat fit on training patients only (all folds),PASS,50 folds asserted
+[pooled] train/test disjoint and habitat fit on training patients only (all folds),PASS,50 folds asserted
+Permuted and observed runs share identical label-independent folds,PASS,asserted
+Primary comparison pre-specified before imaging results,PASS (decided from metadata only),
+Habitat model refitted inside every training fold,PASS (asserted per fold),
+Shape features excluded from habitat clustering,PASS (habitat_columns asserts),
+Spatial metrics composition-adjusted (within-patient permutation null),PASS (by construction),
+Thresholds chosen on training folds only,PASS (train_only_threshold),
+Label-permutation test reruns the full learning procedure on label-independent folds,PASS,
+Leave-one-cohort-out run only when training events are sufficient,PASS,
+External untouched cohort,NOT AVAILABLE,
